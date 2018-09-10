@@ -12,6 +12,12 @@
 		0B07B5ED20E1C93400C4251F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B07B5EB20E1C93400C4251F /* Main.storyboard */; };
 		0B07B5EF20E1C93700C4251F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B07B5EE20E1C93700C4251F /* Assets.xcassets */; };
 		0B07B5F220E1C93700C4251F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B07B5F020E1C93700C4251F /* LaunchScreen.storyboard */; };
+		0B07B5FC20E1D36700C4251F /* TouchEventListenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07B5FB20E1D36700C4251F /* TouchEventListenerView.swift */; };
+		0B07B5FE20E1D3BA00C4251F /* Filom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07B5FD20E1D3BA00C4251F /* Filom.swift */; };
+		0B07B60020E1F39000C4251F /* TouchEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */; };
+		0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */; };
+		0B2777E8214651C5009ADB5A /* UIGestureRecognizer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E7214651C5009ADB5A /* UIGestureRecognizer+Utils.swift */; };
+		0B87E6C620E3508B00BE6948 /* TouchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87E6C520E3508B00BE6948 /* TouchEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		0B07B5EE20E1C93700C4251F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B07B5F120E1C93700C4251F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B07B5F320E1C93700C4251F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B07B5FB20E1D36700C4251F /* TouchEventListenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventListenerView.swift; sourceTree = "<group>"; };
+		0B07B5FD20E1D3BA00C4251F /* Filom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filom.swift; sourceTree = "<group>"; };
+		0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventListener.swift; sourceTree = "<group>"; };
+		0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
+		0B2777E7214651C5009ADB5A /* UIGestureRecognizer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Utils.swift"; sourceTree = "<group>"; };
+		0B87E6C520E3508B00BE6948 /* TouchEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,35 @@
 			isa = PBXGroup;
 			children = (
 				0B07B5E720E1C93400C4251F /* AppDelegate.swift */,
-				0B07B5E920E1C93400C4251F /* ViewController.swift */,
+				0B07B5FD20E1D3BA00C4251F /* Filom.swift */,
+				0B07B5FB20E1D36700C4251F /* TouchEventListenerView.swift */,
+				0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */,
+				0B87E6C520E3508B00BE6948 /* TouchEvent.swift */,
+				0B2777EA21465378009ADB5A /* View Controllers */,
+				0B2777E921465366009ADB5A /* Extensions */,
 				0B07B5EB20E1C93400C4251F /* Main.storyboard */,
 				0B07B5EE20E1C93700C4251F /* Assets.xcassets */,
 				0B07B5F020E1C93700C4251F /* LaunchScreen.storyboard */,
 				0B07B5F320E1C93700C4251F /* Info.plist */,
 			);
 			path = filom;
+			sourceTree = "<group>";
+		};
+		0B2777E921465366009ADB5A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */,
+				0B2777E7214651C5009ADB5A /* UIGestureRecognizer+Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0B2777EA21465378009ADB5A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B07B5E920E1C93400C4251F /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */,
+				0B07B60020E1F39000C4251F /* TouchEventListener.swift in Sources */,
+				0B07B5FE20E1D3BA00C4251F /* Filom.swift in Sources */,
+				0B2777E8214651C5009ADB5A /* UIGestureRecognizer+Utils.swift in Sources */,
 				0B07B5EA20E1C93400C4251F /* ViewController.swift in Sources */,
+				0B07B5FC20E1D36700C4251F /* TouchEventListenerView.swift in Sources */,
+				0B87E6C620E3508B00BE6948 /* TouchEvent.swift in Sources */,
 				0B07B5E820E1C93400C4251F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
