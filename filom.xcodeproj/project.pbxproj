@@ -67,7 +67,7 @@
 				0B07B5E720E1C93400C4251F /* AppDelegate.swift */,
 				0B07B5FD20E1D3BA00C4251F /* Filom.swift */,
 				0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */,
-				0B87E6C520E3508B00BE6948 /* TouchEvent.swift */,
+				0B2777EE2146639C009ADB5A /* Models */,
 				0B2777EA21465378009ADB5A /* View Controllers */,
 				0B2777E921465366009ADB5A /* Extensions */,
 				0B07B5EB20E1C93400C4251F /* Main.storyboard */,
@@ -93,6 +93,14 @@
 				0B07B5E920E1C93400C4251F /* ViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		0B2777EE2146639C009ADB5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B87E6C520E3508B00BE6948 /* TouchEvent.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

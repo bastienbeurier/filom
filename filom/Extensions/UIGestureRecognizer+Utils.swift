@@ -27,22 +27,42 @@ extension UIGestureRecognizer {
         }
     }
     
+    func gestureDescription() -> String {
+        if self is UITapGestureRecognizer {
+            return "Tap"
+        } else if self is UIPinchGestureRecognizer {
+            return "Pinch"
+        } else if self is UIRotationGestureRecognizer {
+            return "Rotation"
+        } else if self is UIPanGestureRecognizer {
+            return "Pan"
+        } else if self is UIScreenEdgePanGestureRecognizer {
+            return "Screen Edge Pan"
+        } else if self is UILongPressGestureRecognizer {
+            return "Long Press"
+        } else if self is UISwipeGestureRecognizer {
+            return "Swipe"
+        } else {
+            return "Unknown"
+        }
+    }
+    
     func location() -> CGPoint {
         return self is UITapGestureRecognizer ? self.location(ofTouch: 0, in: self.view) : self.location(in: self.view)
     }
     
-    func touchHierarchy() -> String {
+    func touchHierarchy() -> [String] {
         guard let view = self.view, var topView = view.hitTest(self.location(in: view), with: nil) else {
-            return ""
+            return []
         }
         
-        var subviewsDesc = "\(type(of: topView))"
+        var subviews = ["\(type(of: topView))"]
         while let view = topView.superview {
-            subviewsDesc += ", \(type(of: view))"
+            subviews.append("\(type(of: view))")
             topView = view
         }
         
-        return subviewsDesc
+        return subviews
     }
 
 }

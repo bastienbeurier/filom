@@ -19,27 +19,18 @@ class TouchEventListener: NSObject {
             UIRotationGestureRecognizer(target: self, action: #selector(self.handleGesture(_:))),
             UIPanGestureRecognizer(target: self, action: #selector(self.handleGesture(_:))),
             UIScreenEdgePanGestureRecognizer(target: self, action: #selector(self.handleGesture(_:))),
-            UILongPressGestureRecognizer(target: self, action: #selector(self.handleGesture(_:)))]
+            UILongPressGestureRecognizer(target: self, action: #selector(self.handleGesture(_:))),
+            UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture(_:)))
+        ]
         
         for recognizer in recognizers {
             window.addGestureRecognizer(recognizer)
         }
     }
     
-    func printGestureInfo(recognizer: UIGestureRecognizer) {
-        print("""
-            Type: \(type(of: recognizer))
-            State: \(recognizer.stateDescription())
-            Views: \(recognizer.touchHierarchy())
-            View Controller: \(UIApplication.topViewControllerDesc())
-            Location: \(recognizer.location())
-            \n
-            """)
-    }
-    
     @objc func handleGesture(_ sender: UIGestureRecognizer) {
         guard sender.state == .ended else { return }
-        printGestureInfo(recognizer: sender)
+        print(TouchEvent(recognizer: sender))
     }
 
 }
