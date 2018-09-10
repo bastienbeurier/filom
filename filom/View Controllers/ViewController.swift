@@ -16,13 +16,9 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func addButtonPressed(_ sender: Any) {
-        numRows += 1
-        let newIndexPath = IndexPath(row: numRows - 1, section: 0)
-        tableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.automatic)
-        tableView.scrollToRow(at: newIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
-    }
 }
+
+// MARK: UITableView Data Source
 
 extension ViewController {
     
@@ -38,7 +34,16 @@ extension ViewController {
     
 }
 
+// MARK: Actions
+
 extension ViewController {
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        numRows += 1
+        let newIndexPath = IndexPath(row: numRows - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: UITableViewRowAnimation.automatic)
+        tableView.scrollToRow(at: newIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+    }
     
 }
 

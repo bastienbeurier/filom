@@ -16,6 +16,8 @@
 		0B07B60020E1F39000C4251F /* TouchEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */; };
 		0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */; };
 		0B2777E8214651C5009ADB5A /* UIGestureRecognizer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E7214651C5009ADB5A /* UIGestureRecognizer+Utils.swift */; };
+		0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777EF214669E6009ADB5A /* DashboardViewController.swift */; };
+		0B2777F2214669F0009ADB5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777F1214669F0009ADB5A /* DetailViewController.swift */; };
 		0B87E6C620E3508B00BE6948 /* TouchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87E6C520E3508B00BE6948 /* TouchEvent.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		0B07B5FF20E1F39000C4251F /* TouchEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEventListener.swift; sourceTree = "<group>"; };
 		0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
 		0B2777E7214651C5009ADB5A /* UIGestureRecognizer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Utils.swift"; sourceTree = "<group>"; };
+		0B2777EF214669E6009ADB5A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		0B2777F1214669F0009ADB5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0B87E6C520E3508B00BE6948 /* TouchEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				0B07B5E920E1C93400C4251F /* ViewController.swift */,
+				0B2777EF214669E6009ADB5A /* DashboardViewController.swift */,
+				0B2777F1214669F0009ADB5A /* DetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B2777F2214669F0009ADB5A /* DetailViewController.swift in Sources */,
 				0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */,
 				0B07B60020E1F39000C4251F /* TouchEventListener.swift in Sources */,
 				0B07B5FE20E1D3BA00C4251F /* Filom.swift in Sources */,
@@ -181,6 +188,7 @@
 				0B07B5EA20E1C93400C4251F /* ViewController.swift in Sources */,
 				0B87E6C620E3508B00BE6948 /* TouchEvent.swift in Sources */,
 				0B07B5E820E1C93400C4251F /* AppDelegate.swift in Sources */,
+				0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
