@@ -9,19 +9,15 @@
 import UIKit
 
 struct TouchEvent {
-    let gesture: String
-    let state: String
     let viewController: String
     let views: [String]
     let location: CGPoint
     let timestamp: Date
     
-    init(recognizer: UIGestureRecognizer) {
-        self.gesture = recognizer.gestureDescription()
-        self.state = recognizer.stateDescription()
+    init(view: UIView, point: CGPoint) {
         self.viewController = UIApplication.topViewControllerDescription()
-        self.views = recognizer.touchHierarchy()
-        self.location = recognizer.location()
+        self.views = view.touchHierarchy()
+        self.location = point
         self.timestamp = Date()
     }
 }
@@ -30,8 +26,6 @@ extension TouchEvent : CustomStringConvertible {
     
     var description: String {
         return """
-        Type: \(gesture)
-        State: \(state)
         View Controller: \(viewController)
         Views: \(views)
         Location: \(location)

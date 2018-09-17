@@ -11,12 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-    let filom = Filom()
+    var filomWindow: FilomWindow?
+    var window: UIWindow? {
+        get {
+            filomWindow = filomWindow ?? FilomWindow(frame: UIScreen.main.bounds)
+            return filomWindow
+        }
+        set { }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.filom.start(window: self.window)
-        
         return true
     }
 

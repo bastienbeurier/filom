@@ -21,27 +21,27 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController {
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        print("Action performed")
+//        print("Action performed")
     }
     
     @IBAction func segmentControlChanged(_ sender: UISegmentedControl) {
-        print("Action performed")
+//        print("Action performed")
     }
     
     @IBAction func textFieldChanged(_ sender: UITextField) {
-        print("Action performed")
+//        print("Action performed")
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        print("Action performed")
+//        print("Action performed")
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        print("Action performed")
+//        print("Action performed")
     }
     
     @IBAction func switchChanged(_ sender: UISwitch) {
-        print("Action performed")
+//        print("Action performed")
     }
     
 }
