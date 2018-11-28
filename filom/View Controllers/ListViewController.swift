@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ListViewController: UITableViewController {
     
     var numRows = 100
 
@@ -20,7 +20,7 @@ class ViewController: UITableViewController {
 
 // MARK: UITableView Data Source
 
-extension ViewController {
+extension ListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? numRows : 0
@@ -36,7 +36,7 @@ extension ViewController {
 
 // MARK: Actions
 
-extension ViewController {
+extension ListViewController {
     
     @IBAction func addButtonPressed(_ sender: Any) {
         numRows += 1
