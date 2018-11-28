@@ -13,12 +13,12 @@ struct ViewHierarchy {
     let topVC: String
     let viewControllers: String
     let timestamp: Date
-    let image: UIImage? = nil
+    let image: UIImage?
     
     init(window: UIWindow) {
         self.topVC = UIApplication.topViewControllerDescription()
         self.timestamp = Date()
-//        self.image = window.layer.screenShot
+        self.image = window.layer.screenShot
         
         var viewControllers = ""
         if let rootVC = window.rootViewController {

@@ -23,6 +23,7 @@
 		0B83144521AEEDFB00AF0796 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144421AEEDFB00AF0796 /* MenuViewController.swift */; };
 		0B83144721AEFED100AF0796 /* FilomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144621AEFED100AF0796 /* FilomData.swift */; };
 		0B87E6C620E3508B00BE6948 /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87E6C520E3508B00BE6948 /* UserEvent.swift */; };
+		77FD14C23FC7D4D3BB552D8E /* Pods_filom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA020FEB38C1259EAAE1C1 /* Pods_filom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,9 @@
 		0B83144421AEEDFB00AF0796 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0B83144621AEFED100AF0796 /* FilomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilomData.swift; sourceTree = "<group>"; };
 		0B87E6C520E3508B00BE6948 /* UserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
+		5EFA020FEB38C1259EAAE1C1 /* Pods_filom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_filom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BB6035F47070EB5A22B4A77 /* Pods-filom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-filom/Pods-filom.debug.xcconfig"; sourceTree = "<group>"; };
+		BACF1A90B08152FBBB3E4F41 /* Pods-filom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filom.release.xcconfig"; path = "Pods/Target Support Files/Pods-filom/Pods-filom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77FD14C23FC7D4D3BB552D8E /* Pods_filom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 			children = (
 				0B07B5E620E1C93400C4251F /* filom */,
 				0B07B5E520E1C93400C4251F /* Products */,
+				983C2D045EB68879911C291A /* Pods */,
+				ECEF8D048BF76C16947AFD8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +128,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		983C2D045EB68879911C291A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BB6035F47070EB5A22B4A77 /* Pods-filom.debug.xcconfig */,
+				BACF1A90B08152FBBB3E4F41 /* Pods-filom.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ECEF8D048BF76C16947AFD8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EFA020FEB38C1259EAAE1C1 /* Pods_filom.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +152,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B07B5F620E1C93700C4251F /* Build configuration list for PBXNativeTarget "filom" */;
 			buildPhases = (
+				6694FAED87B26292645B5D1C /* [CP] Check Pods Manifest.lock */,
 				0B07B5E020E1C93400C4251F /* Sources */,
 				0B07B5E120E1C93400C4251F /* Frameworks */,
 				0B07B5E220E1C93400C4251F /* Resources */,
+				EA0C73D540756E6F5742A895 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +212,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6694FAED87B26292645B5D1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-filom-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA0C73D540756E6F5742A895 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-filom/Pods-filom-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-filom/Pods-filom-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B07B5E020E1C93400C4251F /* Sources */ = {
@@ -346,6 +411,7 @@
 		};
 		0B07B5F720E1C93700C4251F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BB6035F47070EB5A22B4A77 /* Pods-filom.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -364,6 +430,7 @@
 		};
 		0B07B5F820E1C93700C4251F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BACF1A90B08152FBBB3E4F41 /* Pods-filom.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

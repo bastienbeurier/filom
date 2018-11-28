@@ -8,12 +8,23 @@
 
 import UIKit
 
+import SnapKit
+
 class UserPathViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let imageView = UIImageView()
+        view.addSubview(imageView)
+        
+        imageView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(20)
+        }
+        
+        if FilomData.states.count > 0 {
+            imageView.image = FilomData.states[0].image
+        }
     }
 
 }
