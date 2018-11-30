@@ -73,6 +73,7 @@
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="buttonPressed:" destination="a8i-BM-u3L" eventType="touchUpInside" id="2Ya-Cx-QeV"/>
+                                            <segue destination="nyl-iI-jqU" kind="show" id="1oD-YB-VRJ"/>
                                         </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ydS-AV-WYo">
@@ -129,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOz-Qb-Nb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="427"/>
+            <point key="canvasLocation" x="2601" y="137"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="nrH-wK-vu3">

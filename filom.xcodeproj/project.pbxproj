@@ -17,7 +17,7 @@
 		0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */; };
 		0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777EF214669E6009ADB5A /* DashboardViewController.swift */; };
 		0B2777F2214669F0009ADB5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777F1214669F0009ADB5A /* DetailViewController.swift */; };
-		0B83143F21AECA3A00AF0796 /* ViewHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83143E21AECA3A00AF0796 /* ViewHierarchy.swift */; };
+		0B83143F21AECA3A00AF0796 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83143E21AECA3A00AF0796 /* ViewState.swift */; };
 		0B83144121AEE5C600AF0796 /* CALayer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144021AEE5C600AF0796 /* CALayer+Utils.swift */; };
 		0B83144321AEEDCE00AF0796 /* UserPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144221AEEDCE00AF0796 /* UserPathViewController.swift */; };
 		0B83144521AEEDFB00AF0796 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144421AEEDFB00AF0796 /* MenuViewController.swift */; };
@@ -39,7 +39,7 @@
 		0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
 		0B2777EF214669E6009ADB5A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0B2777F1214669F0009ADB5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		0B83143E21AECA3A00AF0796 /* ViewHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHierarchy.swift; sourceTree = "<group>"; };
+		0B83143E21AECA3A00AF0796 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		0B83144021AEE5C600AF0796 /* CALayer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Utils.swift"; sourceTree = "<group>"; };
 		0B83144221AEEDCE00AF0796 /* UserPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPathViewController.swift; sourceTree = "<group>"; };
 		0B83144421AEEDFB00AF0796 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				0B87E6C520E3508B00BE6948 /* UserEvent.swift */,
-				0B83143E21AECA3A00AF0796 /* ViewHierarchy.swift */,
+				0B83143E21AECA3A00AF0796 /* ViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 				0B83144721AEFED100AF0796 /* FilomData.swift in Sources */,
 				0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */,
 				0B130A79214FD1DC005E9ED1 /* UIView+Utils.swift in Sources */,
-				0B83143F21AECA3A00AF0796 /* ViewHierarchy.swift in Sources */,
+				0B83143F21AECA3A00AF0796 /* ViewState.swift in Sources */,
 				0B83144121AEE5C600AF0796 /* CALayer+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

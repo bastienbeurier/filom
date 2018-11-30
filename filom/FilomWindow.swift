@@ -12,7 +12,7 @@ class FilomWindow: UIWindow {
     
     var isActive = false
     var filomEvent : UserEvent?
-    var currentHierarchy : ViewHierarchy? {
+    var currentHierarchy : ViewState? {
         
         didSet {
             self.notifyNewStep()
@@ -33,7 +33,7 @@ class FilomWindow: UIWindow {
     
     func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
-            let hierarchy = ViewHierarchy(window: self)
+            let hierarchy = ViewState(window: self)
             
             if self.currentHierarchy == nil || !self.currentHierarchy!.isEqual(hierarchy) {
                 self.currentHierarchy = hierarchy
@@ -46,7 +46,7 @@ class FilomWindow: UIWindow {
         guard isActive else { return view }
         
         if let view = view  {
-            let newFilomEvent = UserEvent(view: view, point: point)
+            let newFilomEvent = UserEvent(view: view, point: point, window: self)
             
             if filomEvent == nil || newFilomEvent.timestamp.timeIntervalSince(filomEvent!.timestamp) > 0.01 {
                 print(newFilomEvent)

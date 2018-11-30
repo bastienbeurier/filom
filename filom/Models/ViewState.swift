@@ -8,17 +8,15 @@
 
 import UIKit
 
-struct ViewHierarchy {
+struct ViewState {
     
     let topVC: String
     let viewControllers: String
     let timestamp: Date
-    let image: UIImage?
     
     init(window: UIWindow) {
         self.topVC = UIApplication.topViewControllerDescription()
         self.timestamp = Date()
-        self.image = window.layer.screenShot
         
         var viewControllers = ""
         if let rootVC = window.rootViewController {
@@ -39,13 +37,13 @@ struct ViewHierarchy {
         self.viewControllers = viewControllers
     }
     
-    func isEqual(_ hierarchy: ViewHierarchy) -> Bool {
+    func isEqual(_ hierarchy: ViewState) -> Bool {
         return self.topVC == hierarchy.topVC && self.viewControllers == hierarchy.viewControllers
     }
     
 }
 
-extension ViewHierarchy : CustomStringConvertible {
+extension ViewState : CustomStringConvertible {
     
     var description: String {
         return """

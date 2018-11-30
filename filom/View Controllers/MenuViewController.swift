@@ -13,6 +13,9 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let window = UIApplication.shared.keyWindow as? FilomWindow {
+            window.stopMonitoring()
+        }
     }
     
     @IBAction func testButtonTapped(_ sender: Any) {

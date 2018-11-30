@@ -14,9 +14,13 @@ struct UserEvent {
     let location: CGPoint
     let touchViewOrigin: CGPoint
     let touchViewSize: CGSize
+    let image: UIImage?
+    let windowWidth: CGFloat
+    let windowHeight: CGFloat
+    let windowRatio: CGFloat
     let timestamp: Date
     
-    init(view: UIView, point: CGPoint) {
+    init(view: UIView, point: CGPoint, window: UIWindow) {
         self.viewController = UIApplication.topViewControllerDescription()
         self.views = view.touchHierarchy()
         
@@ -26,6 +30,10 @@ struct UserEvent {
         self.touchViewSize = view.bounds.size
         self.location = point
         self.timestamp = Date()
+        self.image = window.layer.screenShot
+        self.windowWidth = window.layer.frame.size.width
+        self.windowHeight = window.layer.frame.size.height
+        self.windowRatio = self.windowWidth/self.windowHeight
     }
     
 }
