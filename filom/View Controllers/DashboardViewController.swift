@@ -16,6 +16,12 @@ class DashboardViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         textField.delegate = self
+                
+        #if targetEnvironment(simulator)
+        if let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path {
+            print("Documents Directory: \(documentsPath)")
+        }
+        #endif
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

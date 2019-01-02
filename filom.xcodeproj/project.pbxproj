@@ -17,12 +17,16 @@
 		0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */; };
 		0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777EF214669E6009ADB5A /* DashboardViewController.swift */; };
 		0B2777F2214669F0009ADB5A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2777F1214669F0009ADB5A /* DetailViewController.swift */; };
+		0B59794121DCC0EA005DD760 /* FilomLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59794021DCC0EA005DD760 /* FilomLogger.swift */; };
+		0B59794321DCF175005DD760 /* FilomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B59794221DCF175005DD760 /* FilomButton.swift */; };
 		0B83143F21AECA3A00AF0796 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83143E21AECA3A00AF0796 /* ViewState.swift */; };
 		0B83144121AEE5C600AF0796 /* CALayer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144021AEE5C600AF0796 /* CALayer+Utils.swift */; };
 		0B83144321AEEDCE00AF0796 /* UserPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144221AEEDCE00AF0796 /* UserPathViewController.swift */; };
 		0B83144521AEEDFB00AF0796 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144421AEEDFB00AF0796 /* MenuViewController.swift */; };
 		0B83144721AEFED100AF0796 /* FilomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B83144621AEFED100AF0796 /* FilomData.swift */; };
 		0B87E6C620E3508B00BE6948 /* UserEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87E6C520E3508B00BE6948 /* UserEvent.swift */; };
+		0BE26D5F21DA704300CA51EB /* UIWindow+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE26D5E21DA704300CA51EB /* UIWindow+Utils.swift */; };
+		0BE26D6121DA706400CA51EB /* ViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE26D6021DA706400CA51EB /* ViewInfo.swift */; };
 		77FD14C23FC7D4D3BB552D8E /* Pods_filom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFA020FEB38C1259EAAE1C1 /* Pods_filom.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,12 +43,16 @@
 		0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Utils.swift"; sourceTree = "<group>"; };
 		0B2777EF214669E6009ADB5A /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0B2777F1214669F0009ADB5A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0B59794021DCC0EA005DD760 /* FilomLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilomLogger.swift; sourceTree = "<group>"; };
+		0B59794221DCF175005DD760 /* FilomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilomButton.swift; sourceTree = "<group>"; };
 		0B83143E21AECA3A00AF0796 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		0B83144021AEE5C600AF0796 /* CALayer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Utils.swift"; sourceTree = "<group>"; };
 		0B83144221AEEDCE00AF0796 /* UserPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPathViewController.swift; sourceTree = "<group>"; };
 		0B83144421AEEDFB00AF0796 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0B83144621AEFED100AF0796 /* FilomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilomData.swift; sourceTree = "<group>"; };
 		0B87E6C520E3508B00BE6948 /* UserEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEvent.swift; sourceTree = "<group>"; };
+		0BE26D5E21DA704300CA51EB /* UIWindow+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Utils.swift"; sourceTree = "<group>"; };
+		0BE26D6021DA706400CA51EB /* ViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInfo.swift; sourceTree = "<group>"; };
 		5EFA020FEB38C1259EAAE1C1 /* Pods_filom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_filom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB6035F47070EB5A22B4A77 /* Pods-filom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-filom/Pods-filom.debug.xcconfig"; sourceTree = "<group>"; };
 		BACF1A90B08152FBBB3E4F41 /* Pods-filom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-filom.release.xcconfig"; path = "Pods/Target Support Files/Pods-filom/Pods-filom.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +94,8 @@
 				0B07B5E720E1C93400C4251F /* AppDelegate.swift */,
 				0B130A76214FC6E5005E9ED1 /* FilomWindow.swift */,
 				0B83144621AEFED100AF0796 /* FilomData.swift */,
+				0B59794021DCC0EA005DD760 /* FilomLogger.swift */,
+				0B59794221DCF175005DD760 /* FilomButton.swift */,
 				0B2777EE2146639C009ADB5A /* Models */,
 				0B2777EA21465378009ADB5A /* View Controllers */,
 				0B2777E921465366009ADB5A /* Extensions */,
@@ -102,6 +112,7 @@
 			children = (
 				0B2777E5214650DB009ADB5A /* UIApplication+Utils.swift */,
 				0B130A78214FD1DC005E9ED1 /* UIView+Utils.swift */,
+				0BE26D5E21DA704300CA51EB /* UIWindow+Utils.swift */,
 				0B83144021AEE5C600AF0796 /* CALayer+Utils.swift */,
 			);
 			path = Extensions;
@@ -124,6 +135,7 @@
 			children = (
 				0B87E6C520E3508B00BE6948 /* UserEvent.swift */,
 				0B83143E21AECA3A00AF0796 /* ViewState.swift */,
+				0BE26D6021DA706400CA51EB /* ViewInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +272,7 @@
 				0B2777F2214669F0009ADB5A /* DetailViewController.swift in Sources */,
 				0B2777E6214650DB009ADB5A /* UIApplication+Utils.swift in Sources */,
 				0B07B5EA20E1C93400C4251F /* ListViewController.swift in Sources */,
+				0B59794121DCC0EA005DD760 /* FilomLogger.swift in Sources */,
 				0B87E6C620E3508B00BE6948 /* UserEvent.swift in Sources */,
 				0B83144321AEEDCE00AF0796 /* UserPathViewController.swift in Sources */,
 				0B130A77214FC6E5005E9ED1 /* FilomWindow.swift in Sources */,
@@ -268,8 +281,11 @@
 				0B83144721AEFED100AF0796 /* FilomData.swift in Sources */,
 				0B2777F0214669E6009ADB5A /* DashboardViewController.swift in Sources */,
 				0B130A79214FD1DC005E9ED1 /* UIView+Utils.swift in Sources */,
+				0BE26D5F21DA704300CA51EB /* UIWindow+Utils.swift in Sources */,
 				0B83143F21AECA3A00AF0796 /* ViewState.swift in Sources */,
 				0B83144121AEE5C600AF0796 /* CALayer+Utils.swift in Sources */,
+				0B59794321DCF175005DD760 /* FilomButton.swift in Sources */,
+				0BE26D6121DA706400CA51EB /* ViewInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

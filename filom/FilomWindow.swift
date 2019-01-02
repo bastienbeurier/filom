@@ -11,52 +11,20 @@ import UIKit
 class FilomWindow: UIWindow {
     
     var isActive = false
-    var filomEvent : UserEvent?
-    var currentHierarchy : ViewState? {
-        
-        didSet {
-            self.notifyNewStep()
-        }
-        
-    }
-    var timer : Timer?
+
+    let logger = FilomLogger()
+    let recordButton: FilomButton = {
+        let button = FilomButton()
+        button.addTarget(self, action: #selector(recordButtonTapped), for: .touchUpInside)
+        return button
+    }()
     
     func startMonitoring() {
-        startTimer()
-        isActive = true
+        toggleRecordButton(isShowing: true)
     }
     
     func stopMonitoring() {
-        timer?.invalidate()
-        isActive = false
-    }
-    
-    func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) {_ in
-            let hierarchy = ViewState(window: self)
-            
-            if self.currentHierarchy == nil || !self.currentHierarchy!.isEqual(hierarchy) {
-                self.currentHierarchy = hierarchy
-            }
-        }        
-    }
-
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
-        guard isActive else { return view }
-        
-        if let view = view  {
-            let newFilomEvent = UserEvent(view: view, point: point, window: self)
-            
-            if filomEvent == nil || newFilomEvent.timestamp.timeIntervalSince(filomEvent!.timestamp) > 0.01 {
-                print(newFilomEvent)
-                FilomData.events.append(newFilomEvent)
-            }
-            
-            filomEvent = newFilomEvent
-        }
-        
-        return view
+        toggleRecordButton(isShowing: false)
     }
     
     func notifyNewStep() {
@@ -65,4 +33,20 @@ class FilomWindow: UIWindow {
         FilomData.states.append(currentHierarchy)
     }
 
+    func toggleRecordButton(isShowing: Bool) {
+        if isShowing {
+            
+        } else {
+            
+        }
+    }
+    
+}
+
+extension FilomWindow {
+    
+    @objc func recordButtonTapped(sender : UIButton){
+        notifyNewStep()
+    }
+    
 }
