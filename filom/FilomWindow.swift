@@ -8,9 +8,15 @@
 
 import UIKit
 
+
+// ----------------------------------
+// MARK: Window
+// ----------------------------------
+
+
 class FilomWindow: UIWindow {
     
-    static let MAX_VIEWS = 100
+    static let MAX_VIEWS = 300
 
     let logger = FilomLogger()
     let recordButton: FilomButton = {
@@ -55,44 +61,103 @@ extension FilomWindow {
     
 }
 
-extension UIWindow {
+
+// ----------------------------------
+// MARK: Button
+// ----------------------------------
+
+
+class FilomButton: UIButton {
     
-    func viewList() -> (String, Int) {
-        var stack: [UIView] = [self]
-        var result = ""
+    private let size: CGFloat = 60.0
+    private let margin: CGFloat = 10.0
+    
+    init() {
+        let screenBounds = UIScreen.main.bounds
+        super.init(frame: CGRect(x: screenBounds.size.width - size - margin,
+                                 y: screenBounds.size.height - size - margin,
+                                 width: size, height: size));
         
-        var viewCount = 0
-        while let view = stack.popLast(), viewCount < FilomWindow.MAX_VIEWS {
-            viewCount += 1
-            result += viewToCsvString(view: view)
-            for subview in view.subviews.reversed() {
-                stack.append(subview)
-            }
-        }
-        
-        return (String(result.dropFirst()), viewCount)
+        backgroundColor = .blue
+        layer.cornerRadius = size / 2
+        clipsToBounds = true
     }
     
-    func viewToCsvString(view: UIView) -> String {
-        return ",1,\(view.frame.origin.x),\(view.frame.origin.y),\(view.frame.size.width),\(view.frame.size.height)"
-    }
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented"); }
     
 }
 
-extension UIView {
+
+// ----------------------------------
+// MARK: Logger
+// ----------------------------------
+
+
+class FilomLogger: NSObject {
     
-    func touchHierarchy() -> [String] {
-        var currentView = self
-        var subviews = ["\(type(of: currentView))"]
-        while let view = currentView.superview {
-            subviews.append("\(type(of: view))")
-            currentView = view
+    let logfileName = "filom"
+    let logfileExtension = "csv"
+    
+    func logToLine(writeString: String) {
+        let url = fileURL(fileName: logfileName, fileExtension: logfileExtension)
+        do {
+            try appendToURL(writeString: writeString + "\n", fileURL: url)
+        } catch let error {
+            print ("Failed writing to URL: \(fileURL), Error:" + error.localizedDescription)
         }
-        
-        return subviews
+    }
+}
+
+extension FilomLogger {
+    var DocumentDirURL: URL {
+        let url = try! FileManager.default.url(for: .documentDirectory,
+                                               in: .userDomainMask,
+                                               appropriateFor: nil,
+                                               create: true)
+        return url
     }
     
+    func fileURL(fileName: String, fileExtension: String)-> URL{
+        return DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension(fileExtension)
+    }
+    
+    func appendToURL(writeString: String, fileURL: URL) throws {
+        let data = writeString.data(using: String.Encoding.utf8)!
+        try append(writeData: data, fileURL: fileURL)
+    }
+    
+    func append(writeData: Data, fileURL: URL) throws {
+        if let fileHandle = FileHandle(forWritingAtPath: fileURL.path) {
+            defer {
+                fileHandle.closeFile()
+            }
+            fileHandle.seekToEndOfFile()
+            fileHandle.write(writeData)
+        }
+        else {
+            let mutableData = NSMutableData(data: firstCsvLine().data(using: String.Encoding.utf8)!)
+            mutableData.append(writeData)
+            try mutableData.write(to: fileURL, options: .atomic)
+        }
+    }
+    
+    func firstCsvLine() -> String {
+        let maxViewCount = FilomWindow.MAX_VIEWS
+        var result = "screen"
+        
+        for i in 1...maxViewCount {
+            result += ",view\(i),view\(i)X,view\(i)Y,view\(i)W,view\(i)H"
+        }
+        
+        return result + "\n"
+    }
 }
+
+
+// ----------------------------------
+// MARK: Extensions
+// ----------------------------------
+
 
 extension UIApplication {
     
@@ -123,3 +188,32 @@ extension UIApplication {
     }
     
 }
+
+extension UIWindow {
+    
+    // Depth-First Search to get the views from back to front.
+    func viewList() -> (String, Int) {
+        var stack: [UIView] = [self]
+        var result = ""
+        
+        var viewCount = 0
+        while let view = stack.popLast(), viewCount < FilomWindow.MAX_VIEWS {
+            viewCount += 1
+            result += viewToCsvString(view: view)
+            for subview in view.subviews.reversed() {
+                let className = "\(type(of: subview))"
+                if className != String(describing: FilomButton.self) {
+                    stack.append(subview)
+                }
+            }
+        }
+        
+        return (String(result.dropFirst()), viewCount)
+    }
+    
+    func viewToCsvString(view: UIView) -> String {
+        return ",1,\(view.frame.origin.x),\(view.frame.origin.y),\(view.frame.size.width),\(view.frame.size.height)"
+    }
+    
+}
+
