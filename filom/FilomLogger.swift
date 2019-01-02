@@ -57,7 +57,7 @@ extension FilomLogger {
     }
     
     func firstCsvLine() -> String {
-        let maxViewCount = 5
+        let maxViewCount = FilomWindow.MAX_VIEWS
         var result = "screen"
         
         for i in 1...maxViewCount {

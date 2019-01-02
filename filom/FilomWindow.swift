@@ -9,6 +9,8 @@
 import UIKit
 
 class FilomWindow: UIWindow {
+    
+    static let MAX_VIEWS = 100
 
     let logger = FilomLogger()
     let recordButton: FilomButton = {
@@ -27,9 +29,10 @@ class FilomWindow: UIWindow {
     
     func logViewList() {
         let topVCDesc = UIApplication.topViewControllerDescription()
-        logger.logToLine(writeString: topVCDesc + "," + viewList())
+        let viewList = self.viewList()
+        logger.logToLine(writeString: topVCDesc + "," + viewList.0)
         
-        let alert = UIAlertController(title: "", message: "Recorded \(topVCDesc)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Recorded \(viewList.1) views in \(topVCDesc).", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         UIApplication.topViewController()?.present(alert, animated: true, completion: nil)
     }
@@ -54,20 +57,20 @@ extension FilomWindow {
 
 extension UIWindow {
     
-    func viewList() -> String {
+    func viewList() -> (String, Int) {
         var stack: [UIView] = [self]
         var result = ""
         
-        var i = 0
-        while let view = stack.popLast(), i < 5 {
-            i += 1
+        var viewCount = 0
+        while let view = stack.popLast(), viewCount < FilomWindow.MAX_VIEWS {
+            viewCount += 1
             result += viewToCsvString(view: view)
             for subview in view.subviews.reversed() {
                 stack.append(subview)
             }
         }
         
-        return String(result.dropFirst())
+        return (String(result.dropFirst()), viewCount)
     }
     
     func viewToCsvString(view: UIView) -> String {
